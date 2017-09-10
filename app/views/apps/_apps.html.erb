@@ -1,0 +1,18 @@
+<% if apps %>
+  <div class="row">
+    <% apps.each do |app| %>
+      <div class="app">
+        <div class="col-md-2 col-sm-4 col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading text-center">
+              <img src="<%= app.image_url %>" alt="">
+            </div>
+            <div class="panel-body text-center">
+              <p class="app-title"><%= app.name %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
