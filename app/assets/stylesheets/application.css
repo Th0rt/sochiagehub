@@ -61,7 +61,7 @@ footer {
 
 /* app */
 .app .panel {
-  height: auto;
+  height: 220px;
 }
 .app .panel-body {
   font-weight: bold;
