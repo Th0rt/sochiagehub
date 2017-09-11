@@ -1,0 +1,84 @@
+
+
+/* body */
+
+body {
+  background: #f2f2f2;
+}
+footer {
+  margin-top: 40px;
+}
+
+/* navbar */
+.navbar {
+  background-color: #fff;
+}
+.navbar-header img {
+  margin-top: 5px;
+  height: 40px;
+}
+
+.nav-title {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.nav-usersearch {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* cover */
+.cover {
+  margin-top: -20px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 300px;
+  background: url("/images/cover-bg.jpg") center center no-repeat;
+  background-size: cover;
+}
+.cover .cover-inner {
+  height: 100%;
+  margin: auto;
+  display: table;
+}
+.cover .cover-inner .cover-contents {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+}
+.cover .cover-inner .cover-contents h1 {
+  margin: 0 0 20px 0;
+  color: skyblue;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+}
+/* search */
+.search {
+  margin-bottom: 20px;
+}
+
+/* app */
+.app .panel {
+  height: auto;
+}
+.app .panel-body {
+  font-weight: bold;
+  height: auto;
+}
+.app .panel-heading {
+  height: auto;
+}
+p.app-title {
+  /* 文の行数を2行に保ち、最後に ... を追加するスタイル */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.friendcode-edit .form-group {
+  width: 100%;
+}
