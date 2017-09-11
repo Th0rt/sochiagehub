@@ -77,3 +77,7 @@ p.app-title {
   -webkit-line-clamp: 1;
   overflow: hidden;
 }
+
+.friendcode-edit .form-group {
+  width: 100%;
+}
