@@ -17,6 +17,17 @@ footer {
   height: 40px;
 }
 
+.nav-title {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.nav-usersearch {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
 /* cover */
 .cover {
   margin-top: -20px;
@@ -39,7 +50,7 @@ footer {
 }
 .cover .cover-inner .cover-contents h1 {
   margin: 0 0 20px 0;
-  color: #fff;
+  color: skyblue;
   font-weight: bold;
   letter-spacing: 0.15em;
 }

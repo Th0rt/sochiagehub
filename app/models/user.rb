@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_many :apps, through: :rel_apps
   has_many :friendcodes
   
+  scope :get_by_name, ->(name){where("name like ?","%#{name}%")}
+  
   def have(app)
     self.rel_apps.find_or_create_by(app_id: app.id)
   end

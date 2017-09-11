@@ -10,14 +10,23 @@
             <div class="panel-body text-center app-title">
               <p class="app-title"><%= app.name %></p>
             </div>
-            <% if user.id == current_user.id %>
-              <%= render 'friendcodes/edit', app: app, friendcodes: @friendcodes %>
-            <% else %>
-              <%= render 'friendcodes/show', user: user, app: app, friendcodes: @friendcodes %>
-            <% end %>
+            <ul class="list-group">
+              <li class="list-group-item text-center">
+                <% if user.friendcode?(app) %>
+                  <% friendcodes.each do |friendcode| %>
+                    <% if friendcode.app_id == app.id %>
+                      <%= friendcode.friendcode %>
+                    <% end %>
+                  <% end %>
+                <% else %>
+                  未登録
+                <% end %>      
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     <% end %>
   </div>
 <% end %>
+

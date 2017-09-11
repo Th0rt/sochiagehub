@@ -7,15 +7,12 @@
       <h1><%= @user.name %></h1>
     </div>
     <div>
-      <%= render 'users/haveapps', apps: @apps, friendcodes: @friendcodes %>
+      <% if current_user.id == @user.id %>
+        <%= render 'friendcodes/edit',user: @user, apps: @apps, friendcodes: @friendcodes %>
+      <% else %>
+        <%= render 'friendcodes/show',user: @user, apps: @apps, friendcodes: @friendcodes %>
+      <% end %>
     </div>
   </div>
-  <div class="addapp text-center">
-    <%= link_to new_app_path do %>
-      <div class="btn btn-primary">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-        アプリを追加
-      </div>
-    <% end %>
-  </div>
+
 </div>

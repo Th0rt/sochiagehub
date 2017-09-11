@@ -1,5 +1,14 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:show]
+  
+  def index
+    @users = User.all
+    @keyword = params[:keyword]
+    if @keyword
+      @users = @users.get_by_name params[:keyword]
+    end
+  end
+  
   def show
     @user = User.find(params[:id])
     @apps = @user.apps
