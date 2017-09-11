@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :create]
   resources :apps, only: [:new]
   resources :rel_apps, only: [:create, :destroy]
+  resources :friendcodes
 end

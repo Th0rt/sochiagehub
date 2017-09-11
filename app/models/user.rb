@@ -8,6 +8,7 @@ class User < ApplicationRecord
   
   has_many :rel_apps
   has_many :apps, through: :rel_apps
+  has_many :friendcodes
   
   def have(app)
     self.rel_apps.find_or_create_by(app_id: app.id)
@@ -20,6 +21,19 @@ class User < ApplicationRecord
   
   def have?(app)
     self.apps.exists?(trackid: app.trackid)
+  end
+  
+  def input_friendcode(app,friendcode)
+    self.friendcodes.find_or_create_by(app_id: app.id, friendcode: friendcode)
+  end
+  
+  def update_friendcode(app,friendcode)
+    app = self.friendcodes.find_by(app_id: app.id)
+    app.update(friendcode: friendcode)
+  end
+  
+  def friendcode?(app)
+    self.friendcodes.exists?(app_id: app.id)
   end
   
 end

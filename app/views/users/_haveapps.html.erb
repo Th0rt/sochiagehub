@@ -8,10 +8,28 @@
               <img src="<%= app.image_url %>" alt="">
             </div>
             <div class="panel-body text-center app-title">
-              <%= app.name %>
+              <p class="app-title"><%= app.name %></p>
             </div>
             <ul class="list-group">
-                <li class="list-group-item text-center">Friend code<input type="text" name="フレンドコード"></li>
+                <li class="list-group-item text-center">
+                  <% if current_user.friendcode?(app) %>
+                    <% @friendcodes.each do |friendcode| %>
+                      <% if friendcode.app_id == app.id %>
+                        <%= form_for(friendcode) do |f| %>
+                          <%= hidden_field_tag :app_id, app.id %>
+                          <%= f.text_field :friendcode, class: "form-group", value: friendcode.friendcode %>
+                          <%= f.submit %>
+                        <% end %>
+                      <% end %>
+                    <% end %>
+                  <% else %>
+                    <%= form_tag(friendcodes_path) do %>
+                      <%= hidden_field_tag :app_id, app.id %>
+                      <%= text_field_tag :friendcode%>
+                      <%= submit_tag %>
+                    <% end %>
+                  <% end %>
+                </li>
             </ul>
             <div class="buttons text-center">
                 <p><%= render 'rel_apps/have_button', app: app %></p>
