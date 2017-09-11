@@ -10,21 +10,10 @@ class AppsController < ApplicationController
 
       results.each do |result|
         # 扱い易いように Item としてインスタンスを作成する（保存はしない）
-        app = App.new(read(result))
+        app = App.find_or_initialize_by(read(result))
         @apps << app
       end
     end
   end
 
-  private
-
-  def read(result)
-    name = result['trackName']
-    image_url = result['artworkUrl100']
-
-    return {
-      name: name,
-      image_url: image_url,
-    }
-  end
 end

@@ -1,0 +1,11 @@
+<% if current_user.have?(app) %>
+  <%= form_tag(rel_app_path(app.id), method: :delete) do %>
+    <%= hidden_field_tag :app_id, app.id %>
+    <%= submit_tag '削除', class: 'btn btn-success' %>
+  <% end %>
+<% else %>
+  <%= form_tag(rel_apps_path) do %>
+    <%= hidden_field_tag :trackid, app.trackid %>
+    <%= submit_tag '追加', class: 'btn btn-primary' %>
+  <% end %>
+<% end %>

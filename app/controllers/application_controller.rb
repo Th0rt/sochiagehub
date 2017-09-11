@@ -10,4 +10,17 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
+
+  def read(result)
+    trackid = result['trackId']
+    name = result['trackName']
+    image_url = result['artworkUrl100']
+
+    return {
+      name: name,
+      image_url: image_url,
+      trackid: trackid
+    }
+  end
+  
 end

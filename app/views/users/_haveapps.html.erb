@@ -7,11 +7,14 @@
             <div class="panel-heading text-center">
               <img src="<%= app.image_url %>" alt="">
             </div>
-            <div class="panel-body text-center">
-              <p class="app-title"><%= app.name %></p>
-              <div class="buttons text-center">
-                <%= render 'rel_apps/have_button', app: app %>
-              </div>
+            <div class="panel-body text-center app-title">
+              <%= app.name %>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item text-center">Friend code<input type="text" name="フレンドコード"></li>
+            </ul>
+            <div class="buttons text-center">
+                <p><%= render 'rel_apps/have_button', app: app %></p>
             </div>
           </div>
         </div>
